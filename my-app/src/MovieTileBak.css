@@ -1,0 +1,29 @@
+.Card {
+  display: 'flex';
+}
+
+.Details: {
+  display: 'flex';
+  flexDirection: 'column';
+}
+
+.ImageSize: {
+  width: 1200;
+  height: 1200;
+  border-width: 50px;
+}
+
+.Content: {
+  flex: '1 0 auto';
+}
+
+.Controls: {
+  display: 'flex';
+  alignItems: 'center';
+  paddingLeft: theme.spacing.unit;
+  paddingBottom: theme.spacing.unit;
+}
+
+.Middle {
+  text-align: center;
+}
