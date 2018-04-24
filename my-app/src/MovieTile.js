@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
-import { Button, Image, Label, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 class MovieTile extends Component {
   constructor(props) {
