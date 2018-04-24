@@ -21,7 +21,7 @@ class MovieTile extends Component {
     return (
       <Card style={{ flex: 1, display: 'flex', flexDirection: 'row', borderWidth: 2, borderStyle: 'solid' }}>
         <CardMedia
-          style={{ width: 200, height: 350, textAlign: 'right' }}
+          style={{ width: 150, height: 260, textAlign: 'right' }}
           image={'https://image.tmdb.org/t/p/w1280' + movie.poster_path}
           title="Live from space album cover"
         />
