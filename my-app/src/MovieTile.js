@@ -19,7 +19,7 @@ class MovieTile extends Component {
     if (movie === undefined) return(<div/>);
 
     return (
-      <Card style={{ flex: 1, display: 'flex', flexDirection: 'row', borderWidth: 5, borderStyle: 'solid' }}>
+      <Card style={{ flex: 1, display: 'flex', flexDirection: 'row', borderWidth: 2, borderStyle: 'solid' }}>
         <CardMedia
           style={{ width: 200, height: 350, textAlign: 'right' }}
           image={'https://image.tmdb.org/t/p/w1280' + movie.poster_path}
