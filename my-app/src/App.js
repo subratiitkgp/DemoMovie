@@ -57,7 +57,6 @@ class App extends Component {
 
   render() {
     let movies = this.state.movies;
-    console.log(movies);
 
     return(
       <div style={{ textAlign: 'center', borderWidth: 2, borderStyle: 'solid' }}>
@@ -82,7 +81,7 @@ class App extends Component {
         <ListGroup>
         {
           movies.filter(movie => movie.adult === false)
-                .map( movie => { return <ListGroupItem key={movie.id}><MovieTile movie={movie} /></ListGroupItem> })
+                .map(movie => { return <ListGroupItem key={movie.id}><MovieTile movie={movie} /></ListGroupItem> })
         }
         </ListGroup>
         </div>
