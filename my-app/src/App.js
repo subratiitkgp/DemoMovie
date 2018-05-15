@@ -1,19 +1,58 @@
 import React, { Component } from 'react';
 import './App.css';
-import MovieTile from './MovieTile';
+import { MovieTile } from './MovieTile';
 import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {movies: []};
+
     this.handlePreviousClick = this.handlePreviousClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
     this.pageCount = 1;
     this.totalPages = 1;
 
     this.fetchMovies();
+  }
+
+  renderButtons() {
+    return (
+      <div>
+        <Button style={{ margin: 5 }} bsStyle="primary" bsSize="large" onClick={this.handlePreviousClick}>
+          Previous
+        </Button>
+        <Button style={{ margin: 5 }} bsStyle="primary" bsSize="large" onClick={this.handleNextClick}>
+          Next
+        </Button>
+      </div>
+    );
+  }
+
+  renderMovies() {
+    const movies = this.state.movies;
+    const moviesFiltered = movies.filter(movie => movie.adult === false);
+
+    return (
+      <div style={{ overflowY: 'scroll' }}>
+        <ListGroup>
+        {
+          moviesFiltered
+                .map(movie => { return <ListGroupItem key={movie.id}><MovieTile movie={movie} /></ListGroupItem> })
+        }
+        </ListGroup>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div style={{ borderWidth: 2, textAlign: 'center', borderStyle: 'solid'}}>
+        {this.renderButtons()}
+        {this.renderMovies()}
+      </div>
+    );
   }
 
   handlePreviousClick() {
@@ -55,39 +94,5 @@ class App extends Component {
       });
   }
 
-  render() {
-    let movies = this.state.movies;
 
-    return(
-      <div style={{ textAlign: 'center', borderWidth: 2, borderStyle: 'solid' }}>
-        <div>
-        <Button style={{ margin: 5 }}
-                bsStyle="primary"
-                bsSize="large"
-                onClick={this.handlePreviousClick}
-        >
-          Previous
-        </Button>
-        <Button style={{ margin: 5 }}
-                bsStyle="primary"
-                bsSize="large"
-                onClick={this.handleNextClick}
-        >
-          Next
-        </Button>
-
-        </div>
-        <div style={{ overflowY: 'scroll' }}>
-        <ListGroup>
-        {
-          movies.filter(movie => movie.adult === false)
-                .map(movie => { return <ListGroupItem key={movie.id}><MovieTile movie={movie} /></ListGroupItem> })
-        }
-        </ListGroup>
-        </div>
-      </div>
-    )
-  }
 }
-
-export default App;

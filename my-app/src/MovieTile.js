@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
-import { Button, DropdownButton, MenuItem } from 'react-bootstrap';
 
-class MovieTile extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {}
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    return { movie: nextProps.movie }
-  }
-
+export class MovieTile extends Component {
   render() {
-    let movie = this.state.movie;
+    let movie = this.props.movie;
     if (movie === undefined) return(<div/>);
 
     return (
@@ -40,19 +29,3 @@ class MovieTile extends Component {
     )
   }
 }
-
-export default MovieTile;
-
-/*
-          <div style={{margin: 5}}>
-            <Button style={{margin: 2}}>abc</Button>
-            <Button style={{margin: 2}}>def</Button>
-            <Button style={{margin: 2}}>efg</Button>
-          </div>
-          <div style={{margin: 5}}>
-            <DropdownButton title={"Default"}>
-              <MenuItem>A</MenuItem>
-              <MenuItem>B</MenuItem>
-            </DropdownButton>
-          </div>
-*/
