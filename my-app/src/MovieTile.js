@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
-import { Button } from 'react-bootstrap';
+import { Button, DropdownButton, MenuItem } from 'react-bootstrap';
 
 class MovieTile extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class MovieTile extends Component {
           title="Live from space album cover"
         />
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <CardContent style={{ flex: '1 0 auto' }}>
+          <CardContent>
             <Typography variant="headline">{movie.title}</Typography>
             <Typography variant="subheading" color="textSecondary">
               {"Rating: " + movie.vote_average}
@@ -35,11 +35,6 @@ class MovieTile extends Component {
               {"Release: " + movie.release_date}
             </Typography>
           </CardContent>
-          <div style={{ flex: '1 0 auto' }}>
-            <Button>abc</Button>
-            <Button>def</Button>
-            <Button>efg</Button>
-          </div>
         </div>
       </Card>
     )
@@ -47,3 +42,17 @@ class MovieTile extends Component {
 }
 
 export default MovieTile;
+
+/*
+          <div style={{margin: 5}}>
+            <Button style={{margin: 2}}>abc</Button>
+            <Button style={{margin: 2}}>def</Button>
+            <Button style={{margin: 2}}>efg</Button>
+          </div>
+          <div style={{margin: 5}}>
+            <DropdownButton title={"Default"}>
+              <MenuItem>A</MenuItem>
+              <MenuItem>B</MenuItem>
+            </DropdownButton>
+          </div>
+*/
