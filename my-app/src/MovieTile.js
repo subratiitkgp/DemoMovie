@@ -14,7 +14,7 @@ export class MovieTile extends Component {
           image={'https://image.tmdb.org/t/p/w1280' + movie.poster_path}
           title="Live from space album cover"
         />
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <CardContent>
             <Typography variant="headline">{movie.title}</Typography>
             <Typography variant="subheading" color="textSecondary">
